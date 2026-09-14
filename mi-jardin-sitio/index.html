@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Jardín</title>
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Radio buttons "de página": controlan qué sección se muestra.
+       Deben ser hermanos directos de <nav> y <main> (todos hijos
+       de <body>) para que funcione el selector CSS ":checked ~".
+       Están ocultos visualmente; se activan haciendo clic en los
+       enlaces de la barra de navegación (que son <label>).
+       ============================================================ -->
+  <input type="radio" name="pagina" id="pagina-plantas" class="radio-pagina" checked>
+  <input type="radio" name="pagina" id="pagina-contacto" class="radio-pagina">
+  <input type="radio" name="pagina" id="pagina-quien" class="radio-pagina">
+
+  <nav class="barra-nav">
+    <label class="marca" for="pagina-plantas">Mi <span>Jardín</span></label>
+    <ul>
+      <li><label for="pagina-plantas" class="enlace-nav">Lista de plantas</label></li>
+      <li><label for="pagina-contacto" class="enlace-nav">Información de contacto</label></li>
+      <li><label for="pagina-quien" class="enlace-nav">Quién mantiene el sitio</label></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         PÁGINA 1: Lista de plantas
+         ============================================================ -->
+    <section class="pagina" id="seccion-plantas">
+
+      <div class="cabecera-pagina">
+        <h1>Lista de plantas de mi jardín</h1>
+        <p>Elegí una categoría para ver las plantas que cultivo y descargar más información en PDF.</p>
+      </div>
+
+      <section class="seccion-plantas">
+        <h2>Seleccioná una categoría</h2>
+
+        <!-- Los radio buttons y los grupos de plantas deben ser hermanos
+             directos dentro de <section> para que funcione el selector
+             CSS ":checked ~" que muestra/oculta cada grupo. -->
+        <input type="radio" name="categoria" id="radio-interior" class="radio-categoria" checked>
+        <label for="radio-interior" class="opcion-categoria">🌿 Interior</label>
+
+        <input type="radio" name="categoria" id="radio-exterior" class="radio-categoria">
+        <label for="radio-exterior" class="opcion-categoria">🌻 Exterior</label>
+
+        <!-- Categoría INTERIOR -->
+        <div class="grupo-plantas" id="grupo-interior">
+
+          <article class="tarjeta-planta">
+            <h3>Potos</h3>
+            <img src="img/potos.svg" alt="Foto de Potos (Epipremnum aureum)">
+            <a class="enlace-info" href="pdfs/potos.pdf" download>Información</a>
+          </article>
+
+          <article class="tarjeta-planta">
+            <h3>Sansevieria</h3>
+            <img src="img/sansevieria.svg" alt="Foto de Sansevieria trifasciata">
+            <a class="enlace-info" href="pdfs/sansevieria.pdf" download>Información</a>
+          </article>
+
+          <article class="tarjeta-planta">
+            <h3>Suculenta Echeveria</h3>
+            <img src="img/echeveria.svg" alt="Foto de suculenta Echeveria elegans">
+            <a class="enlace-info" href="pdfs/echeveria.pdf" download>Información</a>
+          </article>
+
+        </div>
+
+        <!-- Categoría EXTERIOR -->
+        <div class="grupo-plantas" id="grupo-exterior">
+
+          <article class="tarjeta-planta">
+            <h3>Rosal</h3>
+            <img src="img/rosal.svg" alt="Foto de Rosal (Rosa sp.)">
+            <a class="enlace-info" href="pdfs/rosal.pdf" download>Información</a>
+          </article>
+
+          <article class="tarjeta-planta">
+            <h3>Lavanda</h3>
+            <img src="img/lavanda.svg" alt="Foto de Lavanda angustifolia">
+            <a class="enlace-info" href="pdfs/lavanda.pdf" download>Información</a>
+          </article>
+
+          <article class="tarjeta-planta">
+            <h3>Girasol</h3>
+            <img src="img/girasol.svg" alt="Foto de Girasol (Helianthus annuus)">
+            <a class="enlace-info" href="pdfs/girasol.pdf" download>Información</a>
+          </article>
+
+        </div>
+
+      </section>
+    </section>
+
+    <!-- ============================================================
+         PÁGINA 2: Información de contacto
+         ============================================================ -->
+    <section class="pagina" id="seccion-contacto">
+
+      <div class="cabecera-pagina">
+        <h1>Información de contacto</h1>
+        <p>Completá el formulario para comunicarte con nosotros.</p>
+      </div>
+
+      <section>
+        <h2>Formulario de contacto</h2>
+
+        <form class="formulario-contacto" action="#" method="get">
+
+          <div class="campo-formulario">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingresá tu apellido" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="instagram">Instagram</label>
+            <input type="text" id="instagram" name="instagram" placeholder="@tu_usuario">
+          </div>
+
+          <div class="campo-formulario">
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 011 1234-5678">
+          </div>
+
+          <button type="submit" class="boton">Enviar</button>
+
+        </form>
+      </section>
+    </section>
+
+    <!-- ============================================================
+         PÁGINA 3: Quién mantiene el sitio
+         ============================================================ -->
+    <section class="pagina" id="seccion-quien">
+
+      <div class="cabecera-pagina">
+        <h1>¿Quién mantiene este sitio?</h1>
+      </div>
+
+      <section>
+        <div class="perfil-mantenedor">
+          <img class="foto-mantenedor" src="img/echeveria.svg" alt="Imagen representativa del mantenedor del sitio">
+          <div class="datos-mantenedor">
+            <h2>Jardinero/a aficionado/a</h2>
+            <p>
+              Este sitio es mantenido de forma personal por quien cultiva y cuida
+              cada una de las plantas presentadas, tanto de interior como de
+              exterior, en su propio jardín.
+            </p>
+            <ul>
+              <li>Actualización de la lista de plantas y sus fichas en PDF.</li>
+              <li>Registro fotográfico de cada ejemplar del jardín.</li>
+              <li>Respuesta a las consultas recibidas por el formulario de contacto.</li>
+            </ul>
+            <p>
+              El objetivo del sitio es compartir la experiencia de cultivo y
+              brindar información básica de cuidado a quienes quieran comenzar
+              su propio jardín en interiores o exteriores.
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mi Jardín — Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

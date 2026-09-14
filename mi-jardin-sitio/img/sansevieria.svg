@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sansevieria">
+  <rect width="200" height="200" fill="#eef7ee"/>
+  <path d="M65 150 L135 150 L124 190 L76 190 Z" fill="#c62828"/>
+  <rect x="65" y="140" width="70" height="14" fill="#f9a825"/>
+  <path d="M85 145 C80 110 82 70 92 45 C96 60 98 100 98 145 Z" fill="#2e7d32"/>
+  <path d="M100 145 C97 105 99 55 100 35 C103 55 105 105 102 145 Z" fill="#388e3c"/>
+  <path d="M115 145 C112 110 110 70 108 45 C118 60 120 100 118 145 Z" fill="#2e7d32"/>
+  <path d="M92 45 C96 60 98 100 98 145" stroke="#f9a825" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M108 45 C118 60 120 100 118 145" stroke="#f9a825" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>

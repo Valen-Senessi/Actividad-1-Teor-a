@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rosal">
+  <rect width="200" height="200" fill="#eef7ee"/>
+  <rect x="94" y="120" width="10" height="70" fill="#2e7d32"/>
+  <path d="M99 150 L75 165" stroke="#2e7d32" stroke-width="4" fill="none"/>
+  <path d="M99 165 L125 178" stroke="#2e7d32" stroke-width="4" fill="none"/>
+  <ellipse cx="72" cy="163" rx="10" ry="6" fill="#43a047"/>
+  <ellipse cx="128" cy="180" rx="10" ry="6" fill="#43a047"/>
+  <g transform="translate(99 85)">
+    <circle r="26" fill="#c62828"/>
+    <circle r="18" fill="#e53935"/>
+    <circle r="10" fill="#f9a825"/>
+  </g>
+</svg>

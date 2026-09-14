@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín Botánico Personal - Mis Plantas</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="logo">🌿 Mi Jardín</div>
+        <nav>
+            <ul>
+                <li><a href="#plantas">Lista de plantas</a></li>
+                <li><a href="#mantenimiento">Quién mantiene el sitio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Sección: Lista de plantas -->
+        <section id="plantas" class="section-card">
+            <h2>Lista de Plantas</h2>
+            <p>Selecciona una categoría para ver las plantas cultivadas en el jardín:</p>
+            
+            <!-- Radio Buttons colocados directamente antes de .plants-grid para que el selector general (~) funcione perfectamente -->
+            <input type="radio" id="cat-interior" name="categoria" checked>
+            <input type="radio" id="cat-exterior" name="categoria">
+
+            <div class="filter-container">
+                <label for="cat-interior" class="filter-btn">Interior</label>
+                <label for="cat-exterior" class="filter-btn">Exterior</label>
+            </div>
+
+            <!-- Contenedor de la lista de plantas con filtrado CSS puro -->
+            <div class="plants-grid">
+                
+                <!-- Planta Interior 1 -->
+                <div class="plant-card interior">
+                    <h3>Monstera Deliciosa</h3>
+                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=400&q=80" alt="Monstera Deliciosa">
+                    <a href="monstera_deliciosa.pdf" class="pdf-link" download>Información</a>
+                </div>
+
+                <!-- Planta Interior 2 -->
+                <div class="plant-card interior">
+                    <h3>Sansevieria (Lengua de Suegra)</h3>
+                    <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=400&q=80" alt="Sansevieria">
+                    <a href="sansevieria.pdf" class="pdf-link" download>Información</a>
+                </div>
+
+                <!-- Planta Interior 3 -->
+                <div class="plant-card interior">
+                    <h3>Poto (Epipremnum aureum)</h3>
+                    <img src="https://cdn.shopify.com/s/files/1/0059/8835/2052/files/N_joy-pothos-1_adf9025c-69eb-47bf-a8bb-68c9930b2d28.jpg?v=1761442185" alt="Poto">
+                    <a href="poto.pdf" class="pdf-link" download>Información</a>
+                </div>
+
+                <!-- Planta Exterior 1 -->
+                <div class="plant-card exterior">
+                    <h3>Lavanda</h3>
+                    <img src="https://premierseeds.b-cdn.net/wp-content/uploads/2017/02/Lavender-French-1-270426-Getty-SQ-768x768.jpg" alt="Lavanda">
+                    <a href="lavanda.pdf" class="pdf-link" download>Información</a>
+                </div>
+
+                <!-- Planta Exterior 2 -->
+                <div class="plant-card exterior">
+                    <h3>Rosal</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_3IsGKiGCmJDlAb4L4A0ov0BmzHSG5dOuhnQwFO_KbeYmyMtoiCxUZ2dc&s=10" alt="Rosal">
+                    <a href="rosal.pdf" class="pdf-link" download>Información</a>
+                </div>
+
+                <!-- Planta Exterior 3 -->
+                <div class="plant-card exterior">
+                    <h3>Cactus de San Pedro</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRQwHmVX1YSSiy5j05LmIKAz3M7ZDe4AGRzuZYp9PoIVKUnOjT8H6XfD0&s=10" alt="Cactus de San Pedro">
+                    <a href="cactus_san_pedro.pdf" class="pdf-link" download>Información</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección: Información de quién mantiene el sitio -->
+        <section id="mantenimiento" class="section-card">
+            <h2>Quién Mantiene el Sitio</h2>
+            <p>Este sitio web es creado, cultivado y mantenido con dedicación por un estudiante apasionado por la botánica, la informática y el cuidado de los espacios verdes. Cada planta ha sido propagada y cuidada personalmente para crear un rincón natural único.</p>
+        </section>
+
+        <!-- Sección: Información de contacto -->
+        <section id="contacto" class="section-card">
+            <h2>Información de Contacto</h2>
+            <p>¿Tienes dudas sobre el cuidado de alguna planta o quieres intercambiar gajos? ¡Escríbeme!</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="mail">Correo Electrónico:</label>
+                    <input type="email" id="mail" name="mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="instagram">Instagram:</label>
+                    <input type="text" id="instagram" name="instagram" placeholder="@usuario">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mi Jardín Botánico Personal. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
