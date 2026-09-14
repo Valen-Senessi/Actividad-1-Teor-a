@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Girasol">
+  <rect width="200" height="200" fill="#eef7ee"/>
+  <rect x="95" y="110" width="10" height="80" fill="#2e7d32"/>
+  <path d="M100 140 L75 155" stroke="#2e7d32" stroke-width="4" fill="none"/>
+  <ellipse cx="70" cy="153" rx="12" ry="6" fill="#43a047"/>
+  <g transform="translate(100 75)">
+    <g fill="#f9a825">
+      <ellipse rx="10" ry="22" transform="rotate(0)"/>
+      <ellipse rx="10" ry="22" transform="rotate(30)"/>
+      <ellipse rx="10" ry="22" transform="rotate(60)"/>
+      <ellipse rx="10" ry="22" transform="rotate(90)"/>
+      <ellipse rx="10" ry="22" transform="rotate(120)"/>
+      <ellipse rx="10" ry="22" transform="rotate(150)"/>
+      <ellipse rx="10" ry="22" transform="rotate(180)"/>
+      <ellipse rx="10" ry="22" transform="rotate(210)"/>
+      <ellipse rx="10" ry="22" transform="rotate(240)"/>
+      <ellipse rx="10" ry="22" transform="rotate(270)"/>
+      <ellipse rx="10" ry="22" transform="rotate(300)"/>
+      <ellipse rx="10" ry="22" transform="rotate(330)"/>
+    </g>
+    <circle r="18" fill="#c62828"/>
+  </g>
+</svg>

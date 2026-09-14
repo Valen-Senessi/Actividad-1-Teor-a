@@ -1,0 +1,397 @@
+/* =========================================================
+   estilosIA.css
+   Sitio "Mi Jardín" — Paleta: verde y rojo (principales),
+   amarillo (secundario: contornos, barra de navegación)
+   ========================================================= */
+
+:root {
+  --verde: #2e7d32;
+  --verde-oscuro: #1b5e20;
+  --verde-claro: #eef7ee;
+  --rojo: #c62828;
+  --rojo-oscuro: #8e1c1c;
+  --amarillo: #f9a825;
+  --texto: #222222;
+  --blanco: #ffffff;
+  --borde: 3px;
+  --relleno: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+  color: var(--texto);
+  background-color: var(--verde-claro);
+  line-height: 1.5;
+}
+
+/* ---------- Radios "de página" (ocultos, controlan la navegación) ---------- */
+.radio-pagina {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ---------- Barra de navegación ---------- */
+.barra-nav {
+  background-color: var(--verde);
+  border-bottom: var(--borde) solid var(--amarillo);
+  padding: var(--relleno);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.barra-nav .marca {
+  color: var(--blanco);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.barra-nav .marca span {
+  color: var(--amarillo);
+}
+
+.barra-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.barra-nav ul li .enlace-nav {
+  display: inline-block;
+  color: var(--blanco);
+  cursor: pointer;
+  padding: 10px 16px;
+  border: var(--borde) solid var(--amarillo);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.barra-nav ul li .enlace-nav:hover,
+.barra-nav ul li .enlace-nav:focus {
+  background-color: var(--amarillo);
+  color: var(--verde-oscuro);
+}
+
+/* Resaltar en la barra de navegación la página actualmente activa.
+   Los radios de página son hermanos directos de <nav>, por eso el
+   selector ":checked ~ nav" permite ubicar el label correspondiente. */
+#pagina-plantas:checked ~ .barra-nav ul label[for="pagina-plantas"],
+#pagina-contacto:checked ~ .barra-nav ul label[for="pagina-contacto"],
+#pagina-quien:checked ~ .barra-nav ul label[for="pagina-quien"] {
+  background-color: var(--amarillo);
+  color: var(--verde-oscuro);
+}
+
+/* ---------- Páginas dentro de <main> ---------- */
+/* Todas las "páginas" están ocultas por defecto... */
+.pagina {
+  display: none;
+}
+
+/* ...y se muestra solo la que corresponde al radio marcado.
+   Los radios de página son hermanos directos de <main>. */
+#pagina-plantas:checked ~ main #seccion-plantas,
+#pagina-contacto:checked ~ main #seccion-contacto,
+#pagina-quien:checked ~ main #seccion-quien {
+  display: block;
+}
+
+/* ---------- Contenedor general ---------- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px var(--relleno);
+}
+
+.cabecera-pagina {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cabecera-pagina h1 {
+  color: var(--verde-oscuro);
+  border-bottom: var(--borde) solid var(--rojo);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+section {
+  background-color: var(--blanco);
+  border: var(--borde) solid var(--verde);
+  border-radius: 10px;
+  padding: var(--relleno);
+  margin-bottom: 25px;
+}
+
+section h2 {
+  color: var(--rojo);
+  margin-top: 0;
+  border-bottom: 2px dashed var(--amarillo);
+  padding-bottom: 8px;
+}
+
+/* ---------- Botones genéricos ---------- */
+.boton {
+  display: inline-block;
+  background-color: var(--verde);
+  color: var(--blanco);
+  border: var(--borde) solid var(--amarillo);
+  border-radius: 8px;
+  padding: var(--relleno);
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.boton:hover,
+.boton:focus {
+  background-color: var(--rojo);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Sección "Lista de plantas" — selector de categoría
+   ========================================================= */
+
+/* La sección completa funciona como contenedor flex: el h2 ocupa toda
+   la fila, luego van los radios+labels, y por último los grupos de
+   plantas (que se muestran/ocultan según el radio marcado). Todos son
+   hermanos directos, requisito para que funcione el selector ":checked ~". */
+.seccion-plantas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.seccion-plantas h2 {
+  flex: 1 0 100%;
+}
+
+/* Radio button nativo, visible junto a su etiqueta */
+.radio-categoria {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--rojo);
+  cursor: pointer;
+  margin: 0;
+}
+
+.opcion-categoria {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--verde-oscuro);
+  padding: 8px 16px;
+  border: var(--borde) solid var(--amarillo);
+  border-radius: 8px;
+  background-color: var(--verde-claro);
+  margin-right: 10px;
+}
+
+/* Resalta la etiqueta de la categoría activa */
+.radio-categoria:checked + .opcion-categoria {
+  background-color: var(--amarillo);
+  color: var(--verde-oscuro);
+  border-color: var(--rojo);
+}
+
+/* Ocultar los grupos de plantas por defecto: ocupan el 100% del ancho
+   para que queden debajo del selector de categorías */
+.grupo-plantas {
+  display: none;
+  flex: 1 0 100%;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--relleno);
+}
+
+/* Mostrar el grupo correspondiente según el radio button marcado.
+   #radio-interior y #grupo-interior (igual para exterior) son
+   hermanos directos dentro de <section class="seccion-plantas">. */
+#radio-interior:checked ~ #grupo-interior,
+#radio-exterior:checked ~ #grupo-exterior {
+  display: grid;
+}
+
+.tarjeta-planta {
+  border: var(--borde) solid var(--rojo);
+  border-radius: 10px;
+  padding: var(--relleno);
+  background-color: var(--blanco);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarjeta-planta img {
+  width: 100%;
+  max-width: 180px;
+  height: 160px;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 2px solid var(--amarillo);
+  border-radius: 8px;
+  background-color: var(--verde-claro);
+}
+
+.tarjeta-planta h3 {
+  margin: 5px 0;
+  color: var(--verde-oscuro);
+}
+
+.tarjeta-planta a.enlace-info {
+  border: var(--borde) solid var(--amarillo);
+  background-color: var(--rojo);
+  color: var(--blanco);
+  border-radius: 6px;
+  padding: 10px var(--relleno);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.tarjeta-planta a.enlace-info:hover {
+  background-color: var(--verde);
+}
+
+/* =========================================================
+   Formulario de contacto
+   ========================================================= */
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-formulario label {
+  font-weight: bold;
+  color: var(--verde-oscuro);
+}
+
+.campo-formulario input {
+  border: var(--borde) solid var(--amarillo);
+  border-radius: 6px;
+  padding: 12px var(--relleno);
+  font-size: 1rem;
+}
+
+.campo-formulario input:focus {
+  outline: none;
+  border-color: var(--rojo);
+}
+
+.formulario-contacto .boton {
+  align-self: center;
+  min-width: 160px;
+  border: var(--borde) solid var(--amarillo);
+}
+
+/* =========================================================
+   Página "Quién mantiene el sitio"
+   ========================================================= */
+
+.perfil-mantenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.foto-mantenedor {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: var(--borde) solid var(--rojo);
+  outline: 3px solid var(--amarillo);
+  outline-offset: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--verde-claro);
+}
+
+.datos-mantenedor {
+  flex: 1;
+  min-width: 220px;
+}
+
+.datos-mantenedor ul {
+  padding-left: 20px;
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+  text-align: center;
+  padding: var(--relleno);
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  border-top: var(--borde) solid var(--amarillo);
+}
+
+/* =========================================================
+   Responsivo
+   ========================================================= */
+@media (max-width: 700px) {
+  .barra-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .barra-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .barra-nav ul li .enlace-nav {
+    display: block;
+    text-align: center;
+  }
+
+  .perfil-mantenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .seccion-plantas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .opcion-categoria {
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .grupo-plantas {
+    grid-template-columns: 1fr;
+  }
+}

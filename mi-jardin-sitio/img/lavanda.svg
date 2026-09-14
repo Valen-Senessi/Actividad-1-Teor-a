@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lavanda">
+  <rect width="200" height="200" fill="#eef7ee"/>
+  <line x1="70" y1="190" x2="80" y2="110" stroke="#2e7d32" stroke-width="3"/>
+  <line x1="100" y1="190" x2="100" y2="95" stroke="#2e7d32" stroke-width="3"/>
+  <line x1="130" y1="190" x2="120" y2="110" stroke="#2e7d32" stroke-width="3"/>
+  <g fill="#8e5fb0">
+    <circle cx="80" cy="105" r="4"/><circle cx="80" cy="95" r="4"/><circle cx="80" cy="85" r="4"/><circle cx="80" cy="75" r="4"/>
+    <circle cx="100" cy="90" r="4"/><circle cx="100" cy="80" r="4"/><circle cx="100" cy="70" r="4"/><circle cx="100" cy="60" r="4"/>
+    <circle cx="120" cy="105" r="4"/><circle cx="120" cy="95" r="4"/><circle cx="120" cy="85" r="4"/><circle cx="120" cy="75" r="4"/>
+  </g>
+  <path d="M75 150 Q70 140 80 130" stroke="#66bb6a" stroke-width="3" fill="none"/>
+  <path d="M125 150 Q130 140 120 130" stroke="#66bb6a" stroke-width="3" fill="none"/>
+</svg>
